@@ -1,72 +1,105 @@
-黑客攻击平台 v2.0
-这是一个用于安全测试和教育目的的网络攻击模拟平台。该工具包含HTTP洪水攻击、漏洞扫描、端口扫描和网站爬取等功能。
+# 🔰 黑客攻击平台 v2.0
 
-功能特点
-📊 实时攻击数据监控
-🔍 自动网站爬取与URL收集
-🛡️ 端口扫描和漏洞检测
-💻 支持代理设置
-📱 多线程攻击模拟
-💾 自动保存爬取结果
-📡 WebSocket服务器实时日志
+这是一个面向安全测试与教育的网络攻击模拟平台，集成了 HTTP 洪水、漏洞扫描、端口扫描、网站爬取等多种功能。
 
-使用方法
-直接运行源代码
-安装依赖：
+## ✨ 功能亮点
 
-使用启动器同时运行界面和WebSocket服务器：
+- 📊 实时监控攻击数据
+- 🔍 自动网站爬取与 URL 收集
+- 🛡️ 端口扫描与漏洞检测
+- 💻 支持代理设置
+- 📱 多线程攻击模拟
+- 💾 爬取结果自动保存
+- 📡 WebSocket 实时日志
 
-或分别运行两个组件：
+## 🚀 快速上手
 
-运行WebSocket服务器：python websocket_server.py
-运行攻击平台界面：python http_flood_gui.py
+### 源码运行
 
-运行打包后的可执行文件
-运行发布版本目录中的两个组件：
-先运行 WebSocket服务器.exe 启动后台服务
-再运行 HTTP攻击平台.exe 启动图形界面应用
+1. **安装依赖：**
+    ```bash
+    pip install requests beautifulsoup4 websocket-client shodan websockets
+    ```
 
-## 自动打包
-运行打包脚本以自动完成所有步骤：
+2. **分别启动两个组件：**
+    - 启动 WebSocket 服务器：
+      ```bash
+      python websocket_server.py
+      ```
+    - 启动攻击平台界面：
+      ```bash
+      python http_flood_gui.py
+      ```
+
+## 🔧 打包指南
+
+### 一键打包
+
+运行打包脚本自动完成所有步骤：
 
 ```bash
 python build.py
 ```
 
-打包脚本将自动执行以下操作：
+脚本会自动安装依赖、构建可执行文件，并整合到发布目录。
 
-- 安装所需依赖和PyInstaller（如果尚未安装）
-- 构建WebSocket服务器的可执行文件
-- 构建HTTP攻击平台GUI的可执行文件
-- 将生成的可执行文件整合到发布版本目录中
+### 手动打包
 
-## 手动打包
-也可以使用已经准备好的.spec文件手动打包：
+如需手动操作，可用 .spec 文件：
 
 ```bash
 pyinstaller websocket_server.spec
 pyinstaller http_flood_gui.spec
 ```
 
-## 项目结构
-- `websocket_server.py` - WebSocket服务器，用于实时日志和数据传输
-- `http_flood_gui.py` - 主GUI应用，包含攻击功能实现
-- `build.py` - 自动打包脚本
-- `爬取结果/` - 保存网站爬取的URL结果
-- `assets/` - 存放应用图标等资源
+### 运行打包版
 
-## 注意事项
-- 本工具仅用于安全研究和教育目的，请勿用于非法活动
-- 使用代理功能时，请确保代理服务器配置正确
-- Shodan API密钥为可选项，使用时需要提供有效的API密钥
-- 首次运行可能会被杀毒软件拦截，需要添加到信任列表
-- 爬取结果会自动保存，可在爬取结果目录中查看
+在发布目录依次运行：
+1. `WebSocket服务器.exe`（后台服务）
+2. `HTTP攻击平台.exe`（图形界面）
 
-## 系统要求
+## 📁 项目结构
+
+- `websocket_server.py` — WebSocket 实时日志服务器
+- `http_flood_gui.py` — 主 GUI 应用
+- `build.py` — 自动打包脚本
+- `爬取结果/` — 爬取数据存储目录
+- `assets/` — 应用资源目录
+- `.vscode/` — VS Code 配置
+
+## ⚠️ 注意事项
+
+- 仅限安全研究与教育，禁止非法用途
+- 使用代理时请确保配置正确
+- Shodan API 密钥为可选项
+- 首次运行可能被杀毒软件拦截
+- 爬取结果自动保存至指定目录
+
+## 💻 系统要求
+
 - Windows 7/10/11
-- Python 3.6或更高版本（仅源码运行需要）
+- Python 3.6 及以上（源码运行）
 - 网络连接
+- 2GB+ 内存
+- 100MB+ 磁盘空间
+- 依赖库：requests, beautifulsoup4, websocket-client, shodan, websockets
 
-## 版本历史
-- v2.0 (2025.04) - 添加WebSocket实时日志，优化UI界面，增强爬虫功能
-- v1.0 (2025.01) - 初始版本
+## 📝 版本历史
+
+- **v2.0** (2025.04.18) — 新增 WebSocket 实时日志，优化 UI，增强爬虫
+- **v1.0** (2025.04.17) — 初始发布
+
+## 📜 许可证
+
+本项目仅供教育用途，禁止用于非法活动。
+
+## 👥 贡献者
+
+- 主要开发者：[Forrest]
+- 图标设计：[ChatGPT]
+
+## 📞 联系方式
+
+如有建议或问题，欢迎联系：
+- 邮箱：jin648862@gmail.com
+- GitHub：[JiQingzhe2004](https://github.com/JiQingzhe2004/)

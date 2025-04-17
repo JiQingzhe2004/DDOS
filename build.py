@@ -35,8 +35,15 @@ def build_executables():
     icon_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
     os.makedirs(icon_dir, exist_ok=True)
     
+    # 创建爬取结果目录（如果尚未存在）
+    results_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "爬取结果")
+    os.makedirs(results_dir, exist_ok=True)
+    print(f"已创建或确认爬取结果目录: {results_dir}")
+    
     # 获取图标路径
     icon_path = os.path.join(icon_dir, "icon.ico")
+    
+    # ...其余代码保持不变...
     
     # 构建WebSocket服务器
     print("\n1. 正在打包WebSocket服务器...")
